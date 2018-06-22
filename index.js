@@ -1,13 +1,4 @@
 import { AppRegistry } from 'react-native';
-import MainScreen from './App';
-import SecondPage from './SecondPage'
-import {
-    StackNavigator,
-} from 'react-navigation';
+import Router from './Pages/Router';
 
-const App = StackNavigator({
-    Main: {screen: MainScreen},
-    Profile: {screen: SecondPage},
-});
-
-AppRegistry.registerComponent('RNPrac', () => App);
+AppRegistry.registerComponent('RNPrac', () => Router);
