@@ -24,21 +24,19 @@ export default class App extends Component<Props> {
         title: 'Welcome',
     };
     jump(page) {
-        console.log('jump')
         const {navigate} = this.props.navigation;
         navigate(page)
     }
 
     _datas = [
-            {key: '按钮', page: 'Button'},
-            {key: '按钮2', page: 'Next'},
-            {key: '按钮3', page: 'Next'},
-            {key: '按钮4', page: 'Next'},
-            {key: '按钮5', page: 'Next'},
+            {key: '文本&按钮', page: 'Button'},
+            {key: '按钮2', page: ''},
+            {key: '按钮3', page: ''},
+            {key: '按钮4', page: ''},
+            {key: '按钮5', page: ''},
         ]
 
     _onPressItem(page) {
-        console.log(page)
         if (page && page.length > 0) {
             this.jump(page)
         }

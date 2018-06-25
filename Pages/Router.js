@@ -5,8 +5,7 @@
  */
 
 import App from './App';
-import Next from './SecondPage';
-import RLKButton from './RLKButton'
+import ButtonPage from './ButtonPage'
 
 import { createStackNavigator } from 'react-navigation';
 
@@ -15,7 +14,7 @@ export default createStackNavigator({
         screen: App
     },
     Button: {
-        screen: RLKButton
+        screen: ButtonPage
     }
 }, {
 
