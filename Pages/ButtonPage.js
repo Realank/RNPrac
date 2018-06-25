@@ -8,10 +8,10 @@ import {
     StyleSheet,
     View,
     Text,
-    Button,
+
 } from 'react-native';
 import ButtonView from './Views/ButtonView';
-
+import Button from 'react-native-button';
 export default class  extends Component {
 
     constructor(props) {
@@ -26,7 +26,15 @@ export default class  extends Component {
             <View>
                 <Text style={styles.text}>文本</Text>
                 <ButtonView height={100} onPress={()=>console.log('button press')}/>
+                <Button
+                    style={{fontSize: 20, color: 'green'}}
+                    styleDisabled={{color: 'red'}}
+                    onPress={() => {()=>console.log('button press')}}
+                >
+                    Press Me!
+                </Button>
             </View>
+
         );
     }
 
