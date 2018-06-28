@@ -50,13 +50,18 @@ export default class  extends Component {
                     <View style={styles.yellow}></View>
                     <View style={styles.red}></View>
                     <View style={styles.green}></View>
-                    <View style={styles.yellow}></View> 
-                    <View style={styles.red}></View>
-                    <View style={styles.green}></View>
                     <View style={styles.yellow}></View>
                     <View style={styles.red}></View>
                     <View style={styles.green}></View>
                     <View style={styles.yellow}></View>
+                    <View style={styles.red}></View>
+                    <View style={styles.green}></View>
+                    <View style={styles.yellow}></View>
+                </View>
+                <View style={[styles.layoutRow,{height:80}, styles.layout6]}>
+                    <View style={[styles.red,styles.flex]}></View>
+                    <View style={[styles.green]}></View>
+                    <View style={[styles.yellow,styles.flex]}></View>
                 </View>
 
             </View>
@@ -90,6 +95,10 @@ const styles = StyleSheet.create({
         flexWrap: 'wrap',//换行(此时不使用alignItems，而是用alignContent来做次轴的对其)
         alignContent: 'space-around'//换行对其方式
     },
+    layout6: {
+        flexWrap: 'wrap',//换行(此时不使用alignItems，而是用alignContent来做次轴的对其)
+        alignContent: 'space-around'//换行对其方式
+    },
     red: {
         backgroundColor: 'red',
         width: 50,
@@ -105,4 +114,7 @@ const styles = StyleSheet.create({
         width: 50,
         height: 50,
     },
+    flex: {
+        flex:1
+    }
 });
