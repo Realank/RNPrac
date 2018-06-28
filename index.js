@@ -1,4 +1,4 @@
 import { AppRegistry } from 'react-native';
-import Router from './Pages/Router';
-import Router2 from './Pages/Router2';
+import Router from './Router';
+
 AppRegistry.registerComponent('RNPrac', () => Router);

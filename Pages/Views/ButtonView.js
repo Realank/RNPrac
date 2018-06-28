@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         borderRadius: 6,
-        color: '#1057d4',
+        // color: '#1057d4',
     },
     buttonText: {
         color: '#1057d4',

@@ -16,20 +16,24 @@ export default class  extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {}
+        this.state = {name: 'hello'}
     }
 
+    print(string) {
+        console.log(this.state.name + string)
+    }
 
     render() {
 
         return (
             <View>
                 <Text style={styles.text}>文本</Text>
-                <ButtonView height={100} onPress={()=>console.log('button press')}/>
+                <ButtonView title={'CustomButton'} height={100} onPress={()=>console.log('button press')}/>
                 <Button
                     style={{fontSize: 20, color: 'green'}}
                     styleDisabled={{color: 'red'}}
-                    onPress={() => {()=>console.log('button press')}}
+                    // onPress={() => {this.print(' world')}}
+                    onPress={this.print.bind(this,' world')}
                 >
                     Press Me!
                 </Button>

@@ -30,8 +30,8 @@ export default class App extends Component<Props> {
 
     _datas = [
             {key: '文本&按钮', page: 'Button'},
-            {key: '按钮2', page: ''},
-            {key: '按钮3', page: ''},
+            {key: '图片', page: 'Image'},
+            {key: '定时器', page: 'Timer'},
             {key: '按钮4', page: ''},
             {key: '按钮5', page: ''},
         ]
