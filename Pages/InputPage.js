@@ -24,7 +24,6 @@ export default class  extends Component {
 
         return (
             <View>
-                <Text style={styles.text}>InputPage</Text>
                 <TextInput
                     style={styles.input}
                     placeholder="Type here to translate!"

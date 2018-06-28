@@ -29,7 +29,6 @@ export default class  extends Component {
 
         return (
             <View>
-                <Text style={styles.text}>AlertPage</Text>
                 <TouchableHighlight style={styles.wrapper}
                                     onPress={() => Alert.alert(
                                         'Alert Title',

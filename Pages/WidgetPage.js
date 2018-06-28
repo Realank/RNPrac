@@ -30,7 +30,6 @@ export default class  extends Component {
 
         return (
             <View>
-                <Text style={styles.text}>WidgetPage</Text>
                 <Text>同步按钮</Text>
                 <Switch
                     onSyncPress={(value) => {

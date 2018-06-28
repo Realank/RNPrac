@@ -60,7 +60,6 @@ export default class  extends Component {
 
         return (
             <View>
-                <Text style={styles.text}>TimerPage</Text>
                 <ButtonView title={'开启定时器'} height={100} onPress={()=>{this.startTimer()}}/>
                 <Text style={styles.text}>{this.state.firstLine}</Text>
                 <Text style={styles.text}>{this.state.secondLine}</Text>

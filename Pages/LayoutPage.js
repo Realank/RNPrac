@@ -24,28 +24,27 @@ export default class  extends Component {
 
         return (
             <View>
-                <Text style={styles.text}>LayoutPage</Text>
-                <View style={[styles.layoutRow,styles.layout1]}>
+                <View style={[styles.layoutRow, styles.layout1]}>
                     <View style={styles.red}></View>
                     <View style={styles.green}></View>
                     <View style={styles.yellow}></View>
                 </View>
-                <View style={[styles.layoutRow,styles.layout2]}>
+                <View style={[styles.layoutRow, styles.layout2]}>
                     <View style={styles.red}></View>
                     <View style={styles.green}></View>
                     <View style={styles.yellow}></View>
                 </View>
-                <View style={[styles.layoutRow,styles.layout3]}>
+                <View style={[styles.layoutRow, styles.layout3]}>
                     <View style={styles.red}></View>
                     <View style={styles.green}></View>
                     <View style={styles.yellow}></View>
                 </View>
-                <View style={[styles.layoutRow,styles.gray,styles.layout4]}>
+                <View style={[styles.layoutRow, {height: 120}, styles.layout4]}>
                     <View style={styles.red}></View>
                     <View style={styles.green}></View>
                     <View style={styles.yellow}></View>
                 </View>
-                <View style={[styles.layoutRow,styles.gray,styles.layout5]}>
+                <View style={[styles.layoutRow, {height: 120}, styles.layout5]}>
                     <View style={styles.red}></View>
                     <View style={styles.green}></View>
                     <View style={styles.yellow}></View>
@@ -72,25 +71,24 @@ const styles = StyleSheet.create({
         color: '#31a6ff',
         fontSize: 20
     },
-    layoutRow:{
+    layoutRow: {
         marginBottom: 10,
-        flexDirection:'row',
+        flexDirection: 'row',
+        backgroundColor: 'gray',
     },
-    layout1:{
-
+    layout1: {},
+    layout2: {
+        justifyContent: 'center'//主轴
     },
-    layout2:{
-        justifyContent:'center'//主轴
-    },
-    layout3:{
+    layout3: {
         justifyContent: 'space-around'//主轴
     },
-    layout4:{
-        alignItems:'center'//次轴
+    layout4: {
+        alignItems: 'center'//次轴
     },
-    layout5:{
-        flexWrap:'wrap',//换行(此时不使用alignItems，而是用alignContent来做次轴的对其)
-        alignContent:'space-around'//换行对其方式
+    layout5: {
+        flexWrap: 'wrap',//换行(此时不使用alignItems，而是用alignContent来做次轴的对其)
+        alignContent: 'space-around'//换行对其方式
     },
     red: {
         backgroundColor: 'red',
@@ -106,9 +104,5 @@ const styles = StyleSheet.create({
         backgroundColor: 'yellow',
         width: 50,
         height: 50,
-    },
-    gray: {
-        backgroundColor: 'gray',
-        height: 120,
     },
 });
