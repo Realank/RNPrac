@@ -8,6 +8,8 @@ import App from './Pages/App';
 import ButtonPage from './Pages/ButtonPage'
 import ImagePage from './Pages/ImagePage'
 import TimerPage from './Pages/TimerPage'
+import InputPage from './Pages/InputPage'
+import WidgetPage from './Pages/WidgetPage'
 
 import { createStackNavigator } from 'react-navigation';
 
@@ -23,6 +25,12 @@ export default createStackNavigator({
     },
     Timer: {
         screen: TimerPage
+    },
+    Input: {
+        screen: InputPage
+    },
+    Widget: {
+        screen: WidgetPage
     },
 }, {
 

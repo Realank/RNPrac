@@ -32,8 +32,10 @@ export default class App extends Component<Props> {
             {key: '文本&按钮', page: 'Button'},
             {key: '图片', page: 'Image'},
             {key: '定时器', page: 'Timer'},
-            {key: '按钮4', page: ''},
-            {key: '按钮5', page: ''},
+            {key: '输入框', page: 'Input'},
+            {key: 'Widgets', page: 'Widget'},
+            {key: '布局', page: ''},
+            {key: 'Tab', page: ''},
         ]
 
     _onPressItem(page) {

@@ -12,10 +12,10 @@ import {
 import ButtonView from './Views/ButtonView';
 
 export default class  extends Component {
+
     static navigationOptions = {
         title: 'Timer',
     };
-
     constructor(props) {
         super(props);
         this.state = {firstLine:'一次定时器未开始',secondLine:'循环定时器未开始',count:0}
