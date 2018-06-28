@@ -50,7 +50,7 @@ export default class  extends Component {
                     <View style={styles.yellow}></View>
                     <View style={styles.red}></View>
                     <View style={styles.green}></View>
-                    <View style={styles.yellow}></View>
+                    <View style={styles.yellow}></View> 
                     <View style={styles.red}></View>
                     <View style={styles.green}></View>
                     <View style={styles.yellow}></View>
