@@ -10,7 +10,8 @@ import ImagePage from './Pages/ImagePage'
 import TimerPage from './Pages/TimerPage'
 import InputPage from './Pages/InputPage'
 import WidgetPage from './Pages/WidgetPage'
-
+import AlertPage from './Pages/AlertPage'
+import LayoutPage from './Pages/LayoutPage'
 import { createStackNavigator } from 'react-navigation';
 
 export default createStackNavigator({
@@ -31,6 +32,12 @@ export default createStackNavigator({
     },
     Widget: {
         screen: WidgetPage
+    },
+    Alert: {
+        screen: AlertPage
+    },
+    Layout: {
+        screen: LayoutPage
     },
 }, {
 

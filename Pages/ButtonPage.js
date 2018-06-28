@@ -13,7 +13,9 @@ import {
 import ButtonView from './Views/ButtonView';
 import Button from 'react-native-button';
 export default class  extends Component {
-
+    static navigationOptions = {
+        title: 'Button',
+    };
     constructor(props) {
         super(props);
         this.state = {name: 'hello'}

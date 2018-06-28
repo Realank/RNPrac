@@ -23,20 +23,22 @@ export default class App extends Component<Props> {
     static navigationOptions = {
         title: 'Welcome',
     };
+
     jump(page) {
         const {navigate} = this.props.navigation;
         navigate(page)
     }
 
     _datas = [
-            {key: '文本&按钮', page: 'Button'},
-            {key: '图片', page: 'Image'},
-            {key: '定时器', page: 'Timer'},
-            {key: '输入框', page: 'Input'},
-            {key: 'Widgets', page: 'Widget'},
-            {key: '布局', page: ''},
-            {key: 'Tab', page: ''},
-        ]
+        {key: '文本&按钮', page: 'Button'},
+        {key: '图片', page: 'Image'},
+        {key: '定时器', page: 'Timer'},
+        {key: '输入框', page: 'Input'},
+        {key: 'Widgets', page: 'Widget'},
+        {key: 'Alert', page: 'Alert'},
+        {key: '布局', page: 'Layout'},
+        {key: 'Tab', page: ''},
+    ]
 
     _onPressItem(page) {
         if (page && page.length > 0) {
@@ -46,7 +48,8 @@ export default class App extends Component<Props> {
     }
 
     _cell({item}) {
-        return <TouchableOpacity style={styles.cell} activeOpacity={1} onPress={ this._onPressItem.bind(this,item.page) }><Text>{item.key}</Text></TouchableOpacity>;
+        return <TouchableOpacity style={styles.cell} activeOpacity={1}
+                                 onPress={this._onPressItem.bind(this, item.page)}><Text>{item.key}</Text></TouchableOpacity>;
     }
 
     render() {
@@ -55,8 +58,8 @@ export default class App extends Component<Props> {
         return (
             <View style={styles.content}>
                 <FlatList
-                    data = { this._datas }
-                    renderItem = { this._cell.bind(this) }
+                    data={this._datas}
+                    renderItem={this._cell.bind(this)}
                 />
             </View>
         );
