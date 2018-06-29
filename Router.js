@@ -4,6 +4,13 @@
  * date：
  */
 
+import React, {Component} from 'react';
+import {
+    StyleSheet,
+    View,
+    Text,
+} from 'react-native';
+
 import App from './Pages/App';
 import ButtonPage from './Pages/ButtonPage'
 import ImagePage from './Pages/ImagePage'
@@ -12,14 +19,43 @@ import InputPage from './Pages/InputPage'
 import WidgetPage from './Pages/WidgetPage'
 import AlertPage from './Pages/AlertPage'
 import LayoutPage from './Pages/LayoutPage'
-import { createStackNavigator } from 'react-navigation';
+import {createBottomTabNavigator, createStackNavigator} from 'react-navigation';
+import TabPage from "./Pages/TabPage";
+
+class HomeScreen extends Component {
+    // static navigationOptions = {
+    //     // title: 'HomeScreen',
+    //     headerTitle: 'Home',
+    // };
+    render() {
+        return (
+            <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+                <Text>Home!</Text>
+            </View>
+        );
+    }
+}
+
+class SettingsScreen extends Component {
+    // static navigationOptions = {
+    //     title: 'SettingsScreen',
+    // };
+    render() {
+        return (
+            <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+                <Text>Settings!</Text>
+            </View>
+        );
+    }
+}
+
 
 export default createStackNavigator({
     Home: {
-        screen: App
+        screen: App,
     },
     Button: {
-        screen: ButtonPage
+        screen: ButtonPage,
     },
     Image: {
         screen: ImagePage
@@ -38,6 +74,15 @@ export default createStackNavigator({
     },
     Layout: {
         screen: LayoutPage
+    },
+    Tab: {
+        screen: createBottomTabNavigator({
+            Home: HomeScreen,
+            Settings: SettingsScreen,
+        }),
+        navigationOptions: ({navigation}) => ({
+            title: 'Tab',
+        }),
     },
 }, {
 

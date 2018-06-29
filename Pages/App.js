@@ -5,7 +5,6 @@
  */
 
 import React, {Component} from 'react';
-import {createStackNavigator} from 'react-navigation';
 import {
     Platform,
     StyleSheet,
@@ -18,6 +17,7 @@ import {
 
 
 type Props = {};
+
 
 export default class App extends Component<Props> {
     static navigationOptions = {
@@ -37,7 +37,7 @@ export default class App extends Component<Props> {
         {key: 'Widgets', page: 'Widget'},
         {key: 'Alert', page: 'Alert'},
         {key: '布局', page: 'Layout'},
-        {key: 'Tab', page: ''},
+        {key: 'Tab', page: 'Tab'},
     ]
 
     _onPressItem(page) {
@@ -49,7 +49,7 @@ export default class App extends Component<Props> {
 
     _cell({item}) {
         return <TouchableOpacity style={styles.cell} activeOpacity={1}
-                                 onPress={this._onPressItem.bind(this, item.page)}><Text>{item.key}</Text></TouchableOpacity>;
+                                 onPress={this._onPressItem.bind(this, item.page)}><Text style={styles.cellText}>{item.key}</Text></TouchableOpacity>;
     }
 
     render() {
@@ -79,5 +79,9 @@ const styles = StyleSheet.create({
         borderColor: '#eceae2',
         borderWidth: 2,
     },
+    cellText: {
+        fontSize: 20,
+        color:'black'
+    }
 });
 
