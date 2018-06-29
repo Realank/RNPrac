@@ -1,6 +1,8 @@
 # RNPrac
 
-###How to use
+
+
+### How to use
 
 - clone into your own $folder
 - cd into your $folder
