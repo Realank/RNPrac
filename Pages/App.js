@@ -15,6 +15,9 @@ import {
   TouchableOpacity
 } from 'react-native'
 
+import { connect, Provider } from 'react-redux'
+import {store, increase, decrease, reset} from './BusinessService/CounterBusiness'
+
 type Props = {};
 
 export default class App extends Component<Props> {
@@ -43,7 +46,8 @@ export default class App extends Component<Props> {
       {key: 'Widgets', page: 'Widget'},
       {key: 'Alert', page: 'Alert'},
       {key: '布局', page: 'Layout'},
-      {key: 'Tab', page: 'Tab'}
+      {key: 'Tab', page: 'Tab'},
+      {key: 'Redux', page: 'Redux'}
 
     ]
 
@@ -99,8 +103,8 @@ export default class App extends Component<Props> {
             renderItem={this._cell.bind(this)}
             refreshing={this.state.refreshing}
             onRefresh={this._onHeaderRefresh.bind(this)}
-            onEndReachedThreshold={0.1}
-            onEndReached={this._onFooterRefresh.bind(this)}
+            // onEndReachedThreshold={0.1}
+            // onEndReached={this._onFooterRefresh.bind(this)}
             // onViewableItemsChanged={(info) => {
             //   //    alert("可见不可见触发");
             // }}

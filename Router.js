@@ -20,7 +20,7 @@ import WidgetPage from './Pages/WidgetPage'
 import AlertPage from './Pages/AlertPage'
 import LayoutPage from './Pages/LayoutPage'
 import {createBottomTabNavigator, createStackNavigator} from 'react-navigation'
-import TabPage from './Pages/TabPage'
+import ReduxPage from './Pages/ReduxPage'
 
 class HomeScreen extends Component {
   // static navigationOptions = {
@@ -82,6 +82,9 @@ export default createStackNavigator({
     navigationOptions: ({navigation}) => ({
       title: 'Tab'
     })
+  },
+  Redux: {
+    screen: ReduxPage
   }
 }, {
 
