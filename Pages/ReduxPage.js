@@ -27,7 +27,7 @@ class ReduxPage extends Component {
       <View style={styles.container}>
         <Text style={styles.counter}>{this.props.counter.count}</Text>
         <SubText {...this.props} />
-        <TouchableOpacity style={styles.btn} onPress={reset}>
+        <TouchableOpacity style={styles.btn} onPress={() => { reset(0) }}>
           <Text>归零</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.btn} onPress={increase}>

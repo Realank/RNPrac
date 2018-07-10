@@ -8,32 +8,31 @@ export const RESET = 'RESET'
 // actions
 const increase = () => ({ type: INCREASE })
 const decrease = () => ({ type: DECREASE })
-const reset = () => ({ type: RESET })
+const reset = (num) => ({ type: RESET, num })
 
 // reducers
 const defaultState = {
-  count: 5,
-  factor: 1
+  count: 5
 }
 
 function counter (state = defaultState, action) {
   switch (action.type) {
     case INCREASE:
-      return { ...state, count: state.count + state.factor }
+      return { ...state, count: state.count + 1 }
     case DECREASE:
-      return { ...state, count: state.count - state.factor }
+      return { ...state, count: state.count - 1 }
     case RESET:
-      return { ...state, count: 0 }
+      return { ...state, count: action.num }
     default:
       return state
   }
 }
 
-const reducer = combineReducers({counter})
+const reducers = combineReducers({counter})
 
 const configureStore = preloadedState => {
   return createStore(
-    reducer,
+    reducers,
     preloadedState,
     compose(
       applyMiddleware(createLogger)
