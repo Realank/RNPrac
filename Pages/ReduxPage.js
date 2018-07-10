@@ -12,36 +12,28 @@ import {
   TouchableOpacity
 } from 'react-native'
 import { connect, Provider } from 'react-redux'
+import { bindActionCreators, createStore } from 'redux'
 import {store, increase, decrease, reset} from './BusinessService/CounterBusiness'
+import SubText from './Views/SubText'
 class ReduxPage extends Component {
   constructor (props) {
     super(props)
     this.state = {}
   }
 
-  _onPressReset () {
-    this.props.dispatch(reset())
-  }
-
-  _onPressInc () {
-    this.props.dispatch(increase())
-  }
-
-  _onPressDec () {
-    this.props.dispatch(decrease())
-  }
-
   render () {
+    const {increase, decrease, reset} = this.props
     return (
       <View style={styles.container}>
         <Text style={styles.counter}>{this.props.counter.count}</Text>
-        <TouchableOpacity style={styles.btn} onPress={() => this._onPressReset()}>
+        <SubText {...this.props} />
+        <TouchableOpacity style={styles.btn} onPress={reset}>
           <Text>归零</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.btn} onPress={() => this._onPressInc()}>
+        <TouchableOpacity style={styles.btn} onPress={increase}>
           <Text>加1</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.btn} onPress={() => this._onPressDec()}>
+        <TouchableOpacity style={styles.btn} onPress={decrease}>
           <Text>减1</Text>
         </TouchableOpacity>
       </View>
@@ -75,5 +67,14 @@ const styles = StyleSheet.create({
 const mapStateToProps = state => ({
   counter: state.counter
 })
+const mapDispatchToProps = dispatch => (bindActionCreators({increase, decrease, reset}, dispatch))
 
-export default connect(mapStateToProps)(ReduxPage)
+let Container = connect(mapStateToProps, mapDispatchToProps)(ReduxPage)
+
+export default class extends Component {
+  render () {
+    return (<Provider store={store}>
+      <Container />
+    </Provider>)
+  }
+};
