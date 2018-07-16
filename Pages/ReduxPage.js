@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
 const mapStateToProps = state => ({
   counter: state.counter
 })
-const mapDispatchToProps = dispatch => (bindActionCreators({increase, decrease, reset}, dispatch))
+const mapDispatchToProps = {increase, decrease, reset}// dispatch => (bindActionCreators({increase, decrease, reset}, dispatch))
 
 let Container = connect(mapStateToProps, mapDispatchToProps)(ReduxPage)
 
